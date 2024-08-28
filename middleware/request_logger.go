@@ -17,8 +17,8 @@ type responseWriter struct {
 }
 
 func (rw *responseWriter) Write(b []byte) (int, error) {
-	rw.body.Write(b)                  // Simpan response body ke buffer
-	return rw.ResponseWriter.Write(b) // Tulis response ke client
+	rw.body.Write(b)
+	return rw.ResponseWriter.Write(b)
 }
 
 func RequestLogger() gin.HandlerFunc {
