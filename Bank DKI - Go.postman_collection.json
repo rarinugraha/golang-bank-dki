@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "8a8848b8-f2cf-4dcf-a9e6-ddb6af00f101",
+		"name": "Bank DKI - Go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2830293"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}login",
+					"host": [
+						"{{server}}login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_barang\": \"Handphone\",\r\n    \"jumlah_stok\": 10,\r\n    \"nomor_seri\": \"I-123\",\r\n    \"additional_info\": {\r\n        \"brand\": \"Apple\",\r\n        \"model\": \"Iphone 15\"\r\n    },\r\n    \"gambar\": \"url_to_image\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}stocks",
+					"host": [
+						"{{server}}stocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}stocks",
+					"host": [
+						"{{server}}stocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}stocks/3",
+					"host": [
+						"{{server}}stocks"
+					],
+					"path": [
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nama_barang\": \"Handphone\",\r\n    \"jumlah_stok\": 5,\r\n    \"nomor_seri\": \"I-123\",\r\n    \"additional_info\": {\r\n        \"brand\": \"Apple\",\r\n        \"model\": \"Iphone 15\",\r\n        \"color\": \"red\"\r\n    },\r\n    \"gambar\": \"url_to_image\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}stocks/3",
+					"host": [
+						"{{server}}stocks"
+					],
+					"path": [
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{server}}stocks/3",
+					"host": [
+						"{{server}}stocks"
+					],
+					"path": [
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
